@@ -1,0 +1,5 @@
+.idea
+.env
+docker/runtime
+*.txt
+commands.md
