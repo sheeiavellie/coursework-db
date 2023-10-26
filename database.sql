@@ -145,7 +145,7 @@
     -- Employees info:
 
         -- SELECT 
-        --   e.ID, passport_number, first_name, last_name, person_type, d.name 
+        --   e.ID, passport_number, first_name, last_name, person_type, d.name as department_name
         -- FROM Credentials c 
         -- JOIN Employee e 
         -- ON e.ID = c.ID 
@@ -155,10 +155,11 @@
     -- Products info:
 
         -- SELECT 
-        --     p.ID, p.name, quantity, price, d.name 
+        --     p.ID, p.name, quantity, price, d.name as department_name
         -- FROM Product p 
         -- JOIN Department d 
-        -- ON p.ID = d.ID;
+        -- ON p.ID = d.ID
+        -- ORDER BY p.ID;
 
     -- Suppliers info:
 
@@ -209,7 +210,8 @@
         -- FROM Department d 
         -- JOIN Product p 
         -- ON p.departmentID = d.ID 
-        -- GROUP BY d.ID, d.name;
+        -- GROUP BY d.ID, d.name
+        -- ORDER BY d.ID;
 
     -- Sales with everything:
     
@@ -228,7 +230,7 @@
         -- By day for each Department:
 
         -- SELECT 
-        --     d.ID, d.name, date(s.date) as date, SUM(s.quantity * p.price) 
+        --     d.ID, d.name, date(s.date) as date, SUM(s.quantity * p.price) as earned_revenue
         -- FROM Department d 
         -- JOIN Sale s 
         -- ON s.departmentID = d.ID 
